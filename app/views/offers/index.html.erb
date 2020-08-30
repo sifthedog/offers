@@ -47,6 +47,7 @@
             <%= offer.premium %>
           </td>          
           <td>
+            <%= link_to offer.enabled ? "disable" : "enable", offer, params: offer, method: :put, :class => "text-primary mr-1" %>
             <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, offer, method: :get, :class => "text-primary mr-1" %>
             <%= link_to "<i class=\"fas fa-trash-alt\"></i>".html_safe, offer, method: :delete, :class => "text-danger ml-1" %>
           </td>
