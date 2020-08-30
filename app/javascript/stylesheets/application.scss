@@ -12,7 +12,7 @@
 }
 
 .card {
-    max-width: 90%;
+    max-width: 45%;
     width: 960px;
     margin: 0px auto;
     border-radius: 10px;
@@ -28,4 +28,26 @@
 
 .card__border {
     border-bottom: 1px solid rgba(0,0,0,0.12); 
+}
+
+.premium {
+    right: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 992px){
+    .card {
+        max-width: 100%;
+        height: 320px;
+        
+        & h2 {
+            font-size: 63px;
+        }
+        & a {
+            font-size: 42px;
+        }
+        & span {
+            font-size: 28px;
+        }
+    }
 }
