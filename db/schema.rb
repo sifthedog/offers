@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_150949) do
     t.integer "starts_at"
     t.integer "ends_at"
     t.boolean "premium", default: false
+    t.boolean "enabled", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

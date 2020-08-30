@@ -1,0 +1,57 @@
+<% flash.each do |type, msg| %>
+  <% if type == "alert" %>
+      <div class="alert alert-danger text-center">
+  <% else %>
+      <div class="alert alert-success text-center">
+  <% end %>
+  <%= msg %>
+  </div>
+<% end %>
+
+<div class='container'>
+  <div class="d-flex flex-row justify-content-between m-3">
+    <%= link_to "<i class=\"fas fa-plus mr-3\"></i>New Offer".html_safe, new_offer_path, :method => :get, :class => "btn btn-primary rounded-lg btn-lg px-5" %>
+  </div>
+
+  <h2>
+    Offers:
+  </h2>
+  <table class="table">
+    <thead >
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>url</th>
+        <th>enabled</th>
+        <th>premium</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @offers.each do |offer| %>
+        <tr>
+          <td>
+            <%= offer.id %>
+          </td>
+          <td>
+            <%= offer.advertiser_name %>
+          </td>
+          <td>
+            <%= offer.url %>
+          </td>
+          <td>
+            <%= offer.get_status %>
+          </td>
+          <td>
+            <%= offer.premium %>
+          </td>          
+          <td>
+            <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, offer, method: :get, :class => "text-primary mr-1" %>
+            <%= link_to "<i class=\"fas fa-trash-alt\"></i>".html_safe, offer, method: :delete, :class => "text-danger ml-1" %>
+          </td>
+        </tr>
+      <% end %>   
+    </tbody>
+  </table>
+</div>

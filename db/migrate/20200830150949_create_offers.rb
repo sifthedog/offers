@@ -6,7 +6,8 @@ class CreateOffers < ActiveRecord::Migration[6.0]
       t.string :description, limit: 500
       t.integer :starts_at
       t.integer :ends_at
-      t.boolean :premium, default: false     
+      t.boolean :premium, default: false
+      t.boolean :enabled, default: false
 
       t.timestamps
     end
