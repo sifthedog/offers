@@ -10,11 +10,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  port: <%= ENV['DB_PORT'] %>
-  host: <%= ENV['DB_HOST'] %>
   timeout: 5000
 
 development:
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
   <<: *default
   database: offers_development
 
@@ -23,8 +23,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
   database: offers_test
 
 production:
   <<: *default
+  url: <%= ENV['DB_URL'] %>
   database: offers_production
