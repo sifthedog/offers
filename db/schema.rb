@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_30_150949) do
 
-  create_table "offers", force: :cascade do |t|
+  create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "advertiser_name"
     t.string "url"
     t.string "description", limit: 500
